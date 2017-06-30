@@ -1,0 +1,31 @@
+<ion-view view-title="通讯录">
+
+  <ion-nav-buttons side="right">
+    <a class="button" ng-click="showSpeedyMenu()">新增</a>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <div ng-repeat="user in sorted_users" class="alpha_list">
+      <ion-item class="item item-divider" id="index_{{user.alphabet}}">
+        <span style="font-weight: bold;">{{user.alphabet}}</span>
+      </ion-item>
+      <!-- 带头像的 -->
+      <ion-item class="item-text-wrap item-avatar item-icon-right" ng-repeat="contact in user.data"
+      ng-click="">
+      <img ng-src="{{contact.face}}">
+      <h2>{{contact.name}}</h2>
+      <p>{{contact.phone}}</p>
+      </ion-item>
+
+      <!-- 简洁 -->
+      <!--<ion-item class="item-text-wrap" ng-repeat="contact in user.data"-->
+                <!--ng-click="">-->
+        <!--{{contact.name}}-->
+      <!--</ion-item>-->
+    </div>
+  </ion-content>
+  <ul class="alpha_sidebar">
+    <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in alphabet">
+      {{letter}}
+    </li>
+  </ul>
+</ion-view>

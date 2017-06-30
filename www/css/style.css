@@ -1,0 +1,316 @@
+/**
+ * Action Sheets for Android
+ * --------------------------------------------------
+ */
+.platform-android .action-sheet-backdrop {
+  -webkit-transition: background-color 150ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.platform-android .action-sheet-backdrop.active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.platform-android .action-sheet-wrapper {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.platform-android .action-sheet-up {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.platform-android .action-sheet {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: auto;
+  z-index: 11;
+  overflow: hidden;
+}
+
+.platform-android .action-sheet .button {
+  display: block;
+  padding: 1px;
+  width: 100%;
+  border-radius: 0;
+  border-color: #d1d3d6;
+  background-color: transparent;
+  color: #007aff;
+  font-size: 21px;
+}
+
+.platform-android .action-sheet .button:hover {
+  color: #007aff;
+}
+
+.platform-android .action-sheet .button.destructive {
+  color: #ff3b30;
+}
+
+.platform-android .action-sheet .button.destructive:hover {
+  color: #ff3b30;
+}
+
+.platform-android .action-sheet .button.active, .platform-android .action-sheet .button.activated {
+  box-shadow: none;
+  border-color: #d1d3d6;
+  color: #007aff;
+  background: #e4e5e7;
+}
+
+.platform-android .action-sheet-has-icons .icon {
+  position: absolute;
+  left: 16px;
+}
+
+.platform-android .action-sheet-title {
+  padding: 16px;
+  color: #8f8f8f;
+  text-align: center;
+  font-size: 13px;
+}
+
+.platform-android .action-sheet-group {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.platform-android .action-sheet-group .button {
+  border-width: 1px 0px 0px 0px;
+}
+
+.platform-android .action-sheet-group .button:first-child:last-child {
+  border-width: 0;
+}
+
+.platform-android .action-sheet-options {
+  background: #f1f2f3;
+}
+
+.platform-android .action-sheet-cancel .button {
+  font-weight: 500;
+}
+
+.platform-android .action-sheet-open {
+  pointer-events: none;
+}
+
+.platform-android .action-sheet-open.modal-open .modal {
+  pointer-events: none;
+}
+
+.platform-android .action-sheet-open .action-sheet-backdrop {
+  pointer-events: auto;
+}
+
+.platform-android .action-sheet .action-sheet-title, .platform-android .action-sheet .button {
+  text-align: center;
+}
+
+.platform-android .action-sheet-cancel {
+  display: block;
+}
+
+/* 微信气泡 */
+div.speech {
+  float: left;
+  margin: 1px 0;
+  padding: 8px;
+  table-layout: fixed;
+  word-break: break-all;
+  position: relative;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#ffffff), color-stop(0.1, #ececec), color-stop(0.5, #dbdbdb), color-stop(0.9, #dcdcdc), to(#8c8c8c));
+  border: 1px solid #989898;
+  border-radius: 8px;
+}
+
+div.speech:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 15px;
+  top: -20px;
+  border: 10px solid;
+  border-color: transparent transparent #989898 transparent;
+}
+
+div.speech:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 17px;
+  top: -16px;
+  border: 8px solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+div.speech.right {
+  display: inline-block;
+  box-shadow: -2px 2px 5px #CCC;
+  margin-right: 10px;
+  max-width: 75%;
+  float: right;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#e4ffa7), color-stop(0.1, #bced50), color-stop(0.4, #aed943), color-stop(0.8, #a7d143), to(#99BF40));
+}
+
+div.speech.right:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 9px;
+  bottom: auto;
+  left: auto;
+  right: -10px;
+  border-width: 9px 0 9px 10px;
+  border-color: transparent #989898;
+}
+
+div.speech.right:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 10px;
+  bottom: auto;
+  left: auto;
+  right: -8px;
+  border-width: 8px 0 8px 9px;
+  border-color: transparent #bced50;
+}
+
+div .left {
+  display: inline-block;
+  box-shadow: 2px 2px 2px #CCCCCC;
+  margin-left: 10px;
+  max-width: 75%;
+  position: relative;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#ffffff), color-stop(0.1, #eae8e8), color-stop(0.4, #E3E3E3), color-stop(0.8, #DFDFDF), to(#D9D9D9));
+}
+
+div .left:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 9px;
+  bottom: auto;
+  left: -10px;
+  border-width: 9px 10px 9px 0;
+  border-color: transparent #989898;
+}
+
+div .left:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 10px;
+  bottom: auto;
+  left: -8px;
+  border-width: 8px 9px 8px 0;
+  border-color: transparent #eae8e8;
+}
+
+.leftimg {
+  float: left;
+  margin-top: 10px;
+}
+
+.rightimg {
+  float: right;
+  margin-top: 10px;
+}
+
+.leftd {
+  clear: both;
+  float: left;
+  margin-left: 10px;
+}
+
+.rightd {
+  clear: both;
+  float: right;
+  margin-right: 10px;
+}
+
+.leftd_h {
+  width: 39px;
+  height: 39px;
+  border-radius: 80%;
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+
+.leftd_h img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rightd_h {
+  width: 39px;
+  height: 39px;
+  border-radius: 100%;
+  display: block;
+  float: right;
+  overflow: hidden;
+}
+
+.rightd_h img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* css */
+.alpha_sidebar {
+  font-size: 10px;
+  position: absolute;
+  top: 50px;
+  right: 12px;
+  z-index: 100000;
+}
+
+.alpha_sidebar li {
+  color: #49afcd;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.alpha_list {
+  padding-right: 22px;
+}
+
+.author_name_left {
+  float: left;
+  margin-left: 56px;
+  color: #b0b0b0;
+}
+.author_name_right {
+  float: right;
+  margin-right: 56px;
+  color: #b0b0b0;
+}

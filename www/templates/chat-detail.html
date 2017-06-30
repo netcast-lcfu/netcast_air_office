@@ -1,0 +1,66 @@
+<ion-view view-title="{{chat.name}}">
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-person"></a>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <!--<img ng-src="{{chat.face}}" style="width: 64px; height: 64px">-->
+    <!--<p>-->
+    <!--{{chat.lastText}}-->
+    <!--</p>-->
+    <ion-refresher pulling-text="" pulling-icon="ion-load-d" on-refresh="doRefresh()"></ion-refresher>
+    <div style="text-align: center;"><span style="color:#b0b0b0;">13:30:02</span></div>
+    <div ng-repeat="message in messages" ng-class="{true: 'rightd', false: 'leftd'}[isUser(message.userId)]">
+      <!-- 群聊 显示对话名称 -->
+      <span ng-class="{true: 'author_name_right', false: 'author_name_left'}[isUser(message.userId)]">{{message.name}}</span>
+      <br/>
+      <span ng-class="{true: 'rightd_h', false: 'leftd_h'}[isUser(message.userId)]">
+        <img ng-src="{{message.avatar}}"/>
+      </span>
+      <div ng-class="{true: 'speech right', false: 'speech left'}[isUser(message.userId)]">
+        {{message.content}}
+      </div>
+    </div>
+
+    <!--<div class="leftd">-->
+    <!--<span class="leftd_h">-->
+    <!--<img ng-src="./img/mike.png"/>-->
+    <!--</span>-->
+    <!--<div class="speech left">-->
+    <!--Hello-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rightd">-->
+    <!--<span class="rightd_h">-->
+    <!--<img ng-src="./img/ben.png"/>-->
+    <!--</span>-->
+    <!--<div class="speech right">-->
+    <!--Hi-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="leftd">-->
+    <!--<span class="leftd_h">-->
+    <!--<img ng-src="./img/mike.png"/>-->
+    <!--</span>-->
+    <!--<div class="speech left">-->
+    <!--What do you do?-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rightd">-->
+    <!--<span class="rightd_h">-->
+    <!--<img ng-src="./img/ben.png"/>-->
+    <!--</span>-->
+    <!--<div class="speech right">-->
+    <!--I'm working-->
+    <!--</div>-->
+    <!--</div>-->
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="请输入消息" on-return="sendMessage(); closeKeyboard()"
+             ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()"/>
+    </label>
+    <button class="button button-clear" ng-click="sendMessage()">
+      发送
+    </button>
+  </ion-footer-bar>
+</ion-view>

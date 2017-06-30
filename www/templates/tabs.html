@@ -1,0 +1,29 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-class="{'tabs-item-hide':hideTabs}">
+
+  <ion-tab title="工作台" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="消息" badge="badges.num" badge-style="badge-assertive" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="统计" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/statistics">
+    <ion-nav-view name="tab-statistics"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="通讯录" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/contact">
+    <ion-nav-view name="tab-contact"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="更多" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/more">
+    <ion-nav-view name="tab-more"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>
