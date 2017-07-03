@@ -3,7 +3,7 @@ angular.module('starter.services', []);
 angular.module('starter.controllers', []);
 angular.module("starter.utils", []);
 
-var app = angular.module('starter', ['ionic','ngCordova', 'starter.services', 'starter.controllers','starter.utils']);
+var app = angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'starter.controllers', 'starter.utils']);
 
 //定义常量
 app.constant("ApiEndpoint", {
@@ -14,13 +14,13 @@ app.constant("ApiEndpoint", {
   timeout: 10000
 });
 
-app.run(function ($ionicPlatform,$rootScope) {
+app.run(function ($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+      cordova.plugins.Keyboard.disableScroll(false);
 
     }
     if (window.StatusBar) {
@@ -31,9 +31,9 @@ app.run(function ($ionicPlatform,$rootScope) {
 
   $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, error) {
     if (toState.name == 'tab.chat-detail') {
-      $rootScope.hideTabs=true;
+      $rootScope.hideTabs = true;
     } else {
-      $rootScope.hideTabs=false;
+      $rootScope.hideTabs = false;
     }
   });
 

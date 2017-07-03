@@ -4,7 +4,7 @@
 var appController = angular.module('starter.controllers');
 
 //用户控制器
-appController.controller('UserCtrl', function ($scope, $rootScope, $state, $cordovaProgress, md5Utils) {
+appController.controller('UserCtrl', function ($scope, $rootScope, $state, $cordovaProgress,$cordovaToast, md5Utils) {
   // 隐藏返回按钮
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = false;
@@ -620,13 +620,15 @@ appController.controller('UserCtrl', function ($scope, $rootScope, $state, $cord
   $scope.userLogin = function () {
     if (!Boolean($scope.user.phone)) {
       console.log('用户名不能为空');
+      $cordovaToast.showShortCenter('用户名不能为空');
       return;
     }
     if (!Boolean($scope.user.password)) {
       console.log('密码不能为空');
+      $cordovaToast.showShortCenter('密码不能为空');
       return;
     }
-    // $cordovaProgress.showAnnular(true, 5000);
+    $cordovaProgress.showAnnular(true, 5000);
     //testJmessage();
     $state.go('tab.dash');
   };

@@ -285,6 +285,34 @@ div .left:after {
   height: auto;
 }
 
+.char-unread-tip {
+  position: absolute;
+  left: 45px;
+  top: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffb275;
+  line-height: 18px;
+  text-align: center;
+}
+
+.char-unread-tip > p {
+  color: #FFF;
+  font-size: 12px;
+}
+
+.char-time-tip {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #8c8c8c;
+  font-size: 13px;
+}
+
 /* css */
 .alpha_sidebar {
   font-size: 10px;
@@ -309,8 +337,10 @@ div .left:after {
   margin-left: 56px;
   color: #b0b0b0;
 }
+
 .author_name_right {
   float: right;
   margin-right: 56px;
   color: #b0b0b0;
 }
+

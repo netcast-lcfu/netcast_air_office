@@ -1,11 +1,14 @@
 <ion-view view-title="消息">
   <ion-content>
+    <ion-refresher pulling-text="" pulling-icon="ion-load-d" on-refresh="doRefresh()"></ion-refresher>
     <ion-list>
       <div class="item item-divider"><span style="font-weight: bold;">系统通知</span></div>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="msg in sysmessages" type="item-text-wrap" href="#/tab/chats/{{msg.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="msg in sysmessages"
+                type="item-text-wrap" href="#/tab/chats/{{msg.id}}">
         <img ng-src="{{msg.face}}">
         <h2>{{msg.title}}</h2>
         <p>{{msg.lastText}}</p>
+        <span class="char-time-tip">{{msg.time |date :'yyyy-MM-dd HH:mm:ss'}}</span>
         <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
 
         <ion-option-button class="button-assertive" ng-click="removeSysMsg(msg)">
@@ -13,21 +16,22 @@
         </ion-option-button>
       </ion-item>
       <div class="item item-divider"><span style="font-weight: bold;">聊天信息</span></div>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap"
+                href="#/tab/chats/{{chat.id}}">
         <img ng-src="{{chat.face}}">
         <h2>{{chat.name}}</h2>
-        <span class="badge badge-positive" ng-hide="chat.unreadMessageCount == '0'">{{ chat.unreadMessageCount }}</span>
-        <p>{{chat.lastText}} <!--<span style="float: right;">10:20</span>--></p>
+        <span class="char-unread-tip" ng-hide="chat.unreadMessageCount == '0'"><p
+          ng-bind-html="chat.unreadMessageCount"></p></span>
+        <p>{{chat.lastText}}</p>
         <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+        <span class="char-time-tip">{{chat.time |date :'yyyy-MM-dd HH:mm:ss'}}</span>
 
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           删除
         </ion-option-button>
         <ion-option-button ng-hide="chat.unreadMessageCount == '0'" class="button-energized" ng-click="isRead(chat.id)">
           标记已读
-        </ion-option-button>
-        <ion-option-button class="button-stable" ng-click="">
-          置顶
         </ion-option-button>
       </ion-item>
     </ion-list>

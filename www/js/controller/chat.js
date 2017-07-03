@@ -4,7 +4,7 @@
 var appController = angular.module('starter.controllers');
 
 //聊天控制器
-appController.controller('ChatsCtrl', function ($scope, Chats,SysMessages) {
+appController.controller('ChatsCtrl', function ($scope, Chats, $ionicScrollDelegate, SysMessages) {
 
   $scope.chats = Chats.all();
 
@@ -14,7 +14,7 @@ appController.controller('ChatsCtrl', function ($scope, Chats,SysMessages) {
 
   $scope.isRead = function (chatId) {
     var chat = Chats.get(chatId);
-    if(chat){
+    if (chat) {
       chat.unreadMessageCount = '0';
     }
   };
@@ -23,6 +23,12 @@ appController.controller('ChatsCtrl', function ($scope, Chats,SysMessages) {
 
   $scope.removeSysMsg = function (msg) {
     SysMessages.remove(msg);
+  };
+
+  $scope.doRefresh = function () {
+    console.log('refresh success');
+    //通知前台视图刷新完成
+    $scope.$broadcast('scroll.refreshComplete');
   };
 
 });
@@ -85,6 +91,9 @@ appController.controller('ChatDetailCtrl', function ($scope, $stateParams, $time
     $scope.$broadcast('scroll.refreshComplete');
   };
 
+  //当前登录用户ID
+  var userId = '123456';
+
   $scope.isUser = function (chatId) {
     if (chatId == userId) {
       return true;
@@ -93,7 +102,6 @@ appController.controller('ChatDetailCtrl', function ($scope, $stateParams, $time
     }
   };
 
-  var userId = '123456';
   $scope.messages = [{
     userId: '891231',
     name: 'Ben',
@@ -120,6 +128,7 @@ appController.controller('ChatDetailCtrl', function ($scope, $stateParams, $time
     time: new Date().getTime()
   }];
 
+  //拓展日期原型
   Date.prototype.Format = function (fmt) {
     var o = {
       "M+": this.getMonth() + 1, //月份
@@ -149,7 +158,7 @@ appController.controller('ChatDetailCtrl', function ($scope, $stateParams, $time
     $scope.messages.push({
       userId: alternate ? userId : '891231',
       name: alternate ? 'Mike' : 'Ben',
-      avatar: alternate ? './img/mike.png' : './img/ben.png',
+      avatar: alternate ? './img/avatar/mike.png' : './img/avatar/ben.png',
       content: $scope.data.message,
       time: new Date().Format("hh:mm:ss")
     });
@@ -177,6 +186,9 @@ appController.controller('ChatDetailCtrl', function ($scope, $stateParams, $time
     // cordova.plugins.Keyboard.close();
   };
 
-  $scope.chat = Chats.get($stateParams.chatId);
+  var chat = Chats.get($stateParams.chatId);
+  chat.unreadMessageCount = '0';
+
+  $scope.chat = chat;
 });
 
