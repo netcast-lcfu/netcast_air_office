@@ -6,27 +6,33 @@ appService.factory('Chats', function () {
     id: 0,
     name: 'Ben Sparrow',
     lastText: 'You on your way?',
-    face: 'img/ben.png'
+    face: 'img/avatar/ben.png',
+    unreadMessageCount:0,
+    isTop:false
   }, {
     id: 1,
     name: 'Max Lynx',
     lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    face: 'img/avatar/max.png',
+    unreadMessageCount:2
   }, {
     id: 2,
     name: 'Adam Bradleyson',
     lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    face: 'img/avatar/adam.jpg',
+    unreadMessageCount:1
   }, {
     id: 3,
     name: 'Perry Governor',
     lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    face: 'img/avatar/perry.png',
+    unreadMessageCount:1
   }, {
     id: 4,
     name: 'Mike Harrington',
     lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png',
+    unreadMessageCount:2
   }];
 
   return {
@@ -53,27 +59,27 @@ appService.factory('SysMessages', function () {
     id: 0,
     title: 'Ben Sparrow',
     lastText: 'You on your way?',
-    face: 'img/ben.png'
+    face: 'img/avatar/ben.png'
   }, {
     id: 1,
     title: 'Max Lynx',
     lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    face: 'img/avatar/max.png'
   }, {
     id: 2,
     title: 'Adam Bradleyson',
     lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    face: 'img/avatar/adam.jpg'
   }, {
     id: 3,
     title: 'Perry Governor',
     lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    face: 'img/avatar/perry.png'
   }, {
     id: 4,
     title: 'Mike Harrington',
     lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   }];
 
   return {
@@ -100,77 +106,77 @@ appService.factory('Contacts', function () {
     id: 0,
     name: 'Ben Sparrow',
     phone: '13702912021',
-    face: 'img/ben.png'
+    face: 'img/avatar/ben.png'
   }, {
     id: 1,
     name: 'Max Lynx',
     phone: '13702912021',
-    face: 'img/max.png'
+    face: 'img/avatar/max.png'
   }, {
     id: 2,
     name: 'Adam Bradleyson',
     phone: '13702912021',
-    face: 'img/adam.jpg'
+    face: 'img/avatar/adam.jpg'
   }, {
     id: 3,
     name: 'Perry Governor',
     phone: '13702912021',
-    face: 'img/perry.png'
+    face: 'img/avatar/perry.png'
   }, {
     id: 4,
     name: 'Mike Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   }, {
     id: 5,
     name: 'Qhut Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   }, {
     id: 6,
     name: 'Zuo Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   }, {
     id: 7,
     name: 'Yar Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 8,
     name: 'Fer Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 9,
     name: 'Kart Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 10,
     name: 'Crt Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 11,
     name: 'Yoh Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 12,
     name: 'Jim Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 13,
     name: 'May Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   },{
     id: 14,
     name: 'Harrington',
     phone: '13702912021',
-    face: 'img/mike.png'
+    face: 'img/avatar/mike.png'
   }];
 
   return {

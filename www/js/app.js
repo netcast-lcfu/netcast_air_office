@@ -3,7 +3,7 @@ angular.module('starter.services', []);
 angular.module('starter.controllers', []);
 angular.module("starter.utils", []);
 
-var app = angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','starter.utils']);
+var app = angular.module('starter', ['ionic','ngCordova', 'starter.services', 'starter.controllers','starter.utils']);
 
 //定义常量
 app.constant("ApiEndpoint", {

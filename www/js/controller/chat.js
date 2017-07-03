@@ -12,6 +12,13 @@ appController.controller('ChatsCtrl', function ($scope, Chats,SysMessages) {
     Chats.remove(chat);
   };
 
+  $scope.isRead = function (chatId) {
+    var chat = Chats.get(chatId);
+    if(chat){
+      chat.unreadMessageCount = '0';
+    }
+  };
+
   $scope.sysmessages = SysMessages.all();
 
   $scope.removeSysMsg = function (msg) {
@@ -90,25 +97,25 @@ appController.controller('ChatDetailCtrl', function ($scope, $stateParams, $time
   $scope.messages = [{
     userId: '891231',
     name: 'Ben',
-    avatar: './img/ben.png',
+    avatar: './img/avatar/ben.png',
     content: 'Hello',
     time: new Date().getTime()
   }, {
     userId: userId,
     name: 'Mike',
-    avatar: './img/mike.png',
+    avatar: './img/avatar/mike.png',
     content: 'Hi',
     time: new Date().getTime()
   }, {
     userId: '891231',
     name: 'Ben',
-    avatar: './img/ben.png',
+    avatar: './img/avatar/ben.png',
     content: 'How are you?',
     time: new Date().getTime()
   }, {
     userId: userId,
     name: 'Mike',
-    avatar: './img/mike.png',
+    avatar: './img/avatar/mike.png',
     content: 'I am fine,thanks.',
     time: new Date().getTime()
   }];
