@@ -4,7 +4,7 @@
 var appController = angular.module('starter.controllers');
 
 //用户控制器
-appController.controller('UserCtrl', function ($scope, $rootScope, $state, $cordovaProgress,$cordovaToast, md5Utils) {
+appController.controller('UserCtrl', function ($scope, $rootScope, $state, $ionicLoading, $cordovaProgress, $cordovaToast, md5Utils) {
   // 隐藏返回按钮
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     viewData.enableBack = false;
@@ -628,8 +628,11 @@ appController.controller('UserCtrl', function ($scope, $rootScope, $state, $cord
       $cordovaToast.showShortCenter('密码不能为空');
       return;
     }
-    $cordovaProgress.showAnnular(true, 5000);
+    // $cordovaProgress.showSimple(true);
+    // $cordovaProgress.show('登录中...');
+    // $cordovaProgress.showDeterminateWithLabel(true, 50000, "正在登录...");
     //testJmessage();
+    $cordovaToast.showShortBottom('登录成功!');
     $state.go('tab.dash');
   };
 });
